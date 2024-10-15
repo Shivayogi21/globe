@@ -1,7 +1,12 @@
+import { GlobeDemo } from "@/Components/globe";
+import Hi from "@/Components/hi";
 
 
 export default function Home() {
   return (
-    <div>hi</div>
+    <>
+    <GlobeDemo></GlobeDemo>
+    <Hi></Hi>
+    </>
   );
 }
