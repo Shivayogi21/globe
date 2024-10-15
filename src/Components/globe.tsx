@@ -1,7 +1,8 @@
 "use client";
 import React from "react";
-import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
+import "./globe.css"
+import StarBackground from "./Starbackground";
 
 const World = dynamic(() => import("./ui/globe").then((m) => m.World), {
   ssr: false,
@@ -30,7 +31,6 @@ export function GlobeDemo() {
     autoRotate: true,
     autoRotateSpeed: 0.5,
   };
-
   const colors = ["#06b6d4", "#3b82f6", "#6366f1"];
   const sampleArcs = [
     {
@@ -396,13 +396,22 @@ export function GlobeDemo() {
   ];
 
   return (
-    <div className="flex flex-row items-center justify-center h-screen md:h-auto relative w-full mb-34 bg-black">
-      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full md:h-[40rem] px-0"> 
-        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white/30 z-40" />
-        <div className="absolute w-full  h-72 md:h-full z-10">
+    <div className="flex flex-col items-center justify-center relative h-[65vh] md:h-[70] lg:h-screen bg-black">
+      <div className="background-image" />
+
+      <div className="max-w-7xl mx-auto w-full relative overflow-hidden h-full z-10">
+        <div className="absolute w-full bottom-0 inset-x-0 h-40 bg-gradient-to-b pointer-events-none select-none from-transparent dark:to-black to-white/30 z-20" />
+        <div className="absolute w-full -bottom-20 h-[60vh] md:h-[40rem] z-10">
           <World data={sampleArcs} globeConfig={globeConfig} />
+          <img
+            src="/assets/img/toy.png"
+            alt="Description"
+            className="absolute left-1/2 top-1/2 transform translate-x-[250px] -translate-y-[280px] h-[90px] w-[120px] hidden lg:block animate-shake"
+          />
         </div>
       </div>
     </div>
   );
+  
+  
 }

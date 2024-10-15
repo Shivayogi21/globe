@@ -1,0 +1,13 @@
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../public/assets/img/bg1.jpg'); /* Update with your image path */
+    background-size: cover; /* Cover the entire area */
+    background-position: center; /* Center the image */
+    z-index: 1; /* Ensure it's behind other elements */
+  }
+  

@@ -1,12 +1,11 @@
 import { GlobeDemo } from "@/Components/globe";
-import Hi from "@/Components/hi";
+import StarBackground from "@/Components/Starbackground";
 
 
 export default function Home() {
   return (
     <>
     <GlobeDemo></GlobeDemo>
-    <Hi></Hi>
     </>
   );
 }
